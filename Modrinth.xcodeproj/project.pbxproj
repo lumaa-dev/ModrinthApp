@@ -17,6 +17,7 @@
 		B9171DCD29AC175A00B83DF2 /* ListModView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9171DCC29AC175A00B83DF2 /* ListModView.swift */; };
 		B9171DCF29AC183B00B83DF2 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9171DCE29AC183B00B83DF2 /* SearchView.swift */; };
 		B9171DD229AC18C900B83DF2 /* ModrinthData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9171DD129AC18C900B83DF2 /* ModrinthData.swift */; };
+		B91A65BD2A54ACF0004707B5 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B91A65BC2A54ACF0004707B5 /* AboutView.swift */; };
 		B975BF6829F034F400A586EE /* ModrinthSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = B975BF6729F034F400A586EE /* ModrinthSearch.swift */; };
 		B975BF6A29F03FC100A586EE /* ModView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B975BF6929F03FC100A586EE /* ModView.swift */; };
 		B975BF6D29F0442600A586EE /* MarkdownUI in Frameworks */ = {isa = PBXBuildFile; productRef = B975BF6C29F0442600A586EE /* MarkdownUI */; };
@@ -28,7 +29,6 @@
 		B99C1AAB29894F600066B440 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99C1AAA29894F600066B440 /* Home.swift */; };
 		B99C1AAF298958000066B440 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B99C1AB1298958000066B440 /* Localizable.strings */; };
 		B99C1AB4298958970066B440 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B99C1AB6298958970066B440 /* Localizable.strings */; };
-		B99C1AB82989AA350066B440 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99C1AB72989AA350066B440 /* AboutView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +42,7 @@
 		B9171DCC29AC175A00B83DF2 /* ListModView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListModView.swift; sourceTree = "<group>"; };
 		B9171DCE29AC183B00B83DF2 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		B9171DD129AC18C900B83DF2 /* ModrinthData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModrinthData.swift; sourceTree = "<group>"; };
+		B91A65BC2A54ACF0004707B5 /* AboutView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
 		B975BF6729F034F400A586EE /* ModrinthSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModrinthSearch.swift; sourceTree = "<group>"; };
 		B975BF6929F03FC100A586EE /* ModView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModView.swift; sourceTree = "<group>"; };
 		B994C16B29ED53CE00C7E33F /* RecordModProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordModProperties.swift; sourceTree = "<group>"; };
@@ -53,7 +54,6 @@
 		B99C1AAA29894F600066B440 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		B99C1AB0298958000066B440 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		B99C1AB5298958970066B440 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
-		B99C1AB72989AA350066B440 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AboutView.swift; path = Modrinth/AboutView.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,7 +122,7 @@
 		B99C1AA929894F410066B440 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				B99C1AB72989AA350066B440 /* AboutView.swift */,
+				B91A65BC2A54ACF0004707B5 /* AboutView.swift */,
 				B99C1AAA29894F600066B440 /* Home.swift */,
 				B9171DCC29AC175A00B83DF2 /* ListModView.swift */,
 				B9171DCE29AC183B00B83DF2 /* SearchView.swift */,
@@ -225,8 +225,8 @@
 			files = (
 				B9171DCD29AC175A00B83DF2 /* ListModView.swift in Sources */,
 				B912A4BE29EC2A5E00F38F1D /* DownloadRecordsView.swift in Sources */,
+				B91A65BD2A54ACF0004707B5 /* AboutView.swift in Sources */,
 				B9171DCF29AC183B00B83DF2 /* SearchView.swift in Sources */,
-				B99C1AB82989AA350066B440 /* AboutView.swift in Sources */,
 				B912A4C829EC30DB00F38F1D /* DownloadRecordView.swift in Sources */,
 				B9171DD229AC18C900B83DF2 /* ModrinthData.swift in Sources */,
 				B912A4C529EC2B6800F38F1D /* Gallery.swift in Sources */,
