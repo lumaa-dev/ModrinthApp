@@ -14,7 +14,6 @@ struct EditValuesView: View {
                         Text("Followers: \(rec.followers < 1 ? 0 : rec.followers)")
                     }
                     
-                    
                     Spacer()
                     
                     Text(rec.date.formatted())

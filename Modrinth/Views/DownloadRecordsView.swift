@@ -112,11 +112,3 @@ struct DownloadRecordsView: View {
         }
     }
 }
-
-/*
- if (recordedMods.filter { record in
-     record.id == mod.id
- }[0].id == mod.id) {
-     return
- }
- */
