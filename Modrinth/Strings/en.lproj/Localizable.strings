@@ -1,0 +1,14 @@
+/* The app name */
+"Modrinth" = "Modrinth";
+
+/* The app motto */
+"The place for Minecraft mods" = "The place for Minecraft mods";
+
+/* Button to open the mod gallery */
+"Discover mods" = "Discover mods";
+
+/* Button to show more about the technical side of the app */
+"About" = "About";
+
+/* Credits */
+"This app has been conceived for iPhones using iOS 16 or more\nNot related to Modrinth or Rinth in any way.\n\nThis app was made in SwiftUI by Lumaa. Find out more on https://lumaa.brebond.com/" = "This app has been conceived for iPhones using iOS 16 or more\nNot related to Modrinth or Rinth in any way.\n\nThis app was made in SwiftUI by Lumaa. Find out more on https://lumaa.brebond.com/";

@@ -1,0 +1,487 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B912A4BE29EC2A5E00F38F1D /* DownloadRecordsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B912A4BD29EC2A5E00F38F1D /* DownloadRecordsView.swift */; };
+		B912A4C029EC2A9000F38F1D /* RecordsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B912A4BF29EC2A9000F38F1D /* RecordsData.swift */; };
+		B912A4C429EC2B6800F38F1D /* ModrinthMod.swift in Sources */ = {isa = PBXBuildFile; fileRef = B912A4C129EC2B6800F38F1D /* ModrinthMod.swift */; };
+		B912A4C529EC2B6800F38F1D /* Gallery.swift in Sources */ = {isa = PBXBuildFile; fileRef = B912A4C229EC2B6800F38F1D /* Gallery.swift */; };
+		B912A4C629EC2B6800F38F1D /* License.swift in Sources */ = {isa = PBXBuildFile; fileRef = B912A4C329EC2B6800F38F1D /* License.swift */; };
+		B912A4C829EC30DB00F38F1D /* DownloadRecordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B912A4C729EC30DB00F38F1D /* DownloadRecordView.swift */; };
+		B912A4CA29EC60D600F38F1D /* EditValuesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B912A4C929EC60D600F38F1D /* EditValuesView.swift */; };
+		B9171DCD29AC175A00B83DF2 /* ListModView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9171DCC29AC175A00B83DF2 /* ListModView.swift */; };
+		B9171DCF29AC183B00B83DF2 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9171DCE29AC183B00B83DF2 /* SearchView.swift */; };
+		B9171DD229AC18C900B83DF2 /* ModrinthData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9171DD129AC18C900B83DF2 /* ModrinthData.swift */; };
+		B975BF6829F034F400A586EE /* ModrinthSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = B975BF6729F034F400A586EE /* ModrinthSearch.swift */; };
+		B975BF6A29F03FC100A586EE /* ModView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B975BF6929F03FC100A586EE /* ModView.swift */; };
+		B975BF6D29F0442600A586EE /* MarkdownUI in Frameworks */ = {isa = PBXBuildFile; productRef = B975BF6C29F0442600A586EE /* MarkdownUI */; };
+		B994C16C29ED53CE00C7E33F /* RecordModProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B994C16B29ED53CE00C7E33F /* RecordModProperties.swift */; };
+		B99C1A9C29893C070066B440 /* ModrinthApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99C1A9B29893C070066B440 /* ModrinthApp.swift */; };
+		B99C1A9E29893C070066B440 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99C1A9D29893C070066B440 /* ContentView.swift */; };
+		B99C1AA029893C0A0066B440 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B99C1A9F29893C0A0066B440 /* Assets.xcassets */; };
+		B99C1AA329893C0A0066B440 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B99C1AA229893C0A0066B440 /* Preview Assets.xcassets */; };
+		B99C1AAB29894F600066B440 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99C1AAA29894F600066B440 /* Home.swift */; };
+		B99C1AAF298958000066B440 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B99C1AB1298958000066B440 /* Localizable.strings */; };
+		B99C1AB4298958970066B440 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B99C1AB6298958970066B440 /* Localizable.strings */; };
+		B99C1AB82989AA350066B440 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99C1AB72989AA350066B440 /* AboutView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		B912A4BD29EC2A5E00F38F1D /* DownloadRecordsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadRecordsView.swift; sourceTree = "<group>"; };
+		B912A4BF29EC2A9000F38F1D /* RecordsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordsData.swift; sourceTree = "<group>"; };
+		B912A4C129EC2B6800F38F1D /* ModrinthMod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModrinthMod.swift; sourceTree = "<group>"; };
+		B912A4C229EC2B6800F38F1D /* Gallery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gallery.swift; sourceTree = "<group>"; };
+		B912A4C329EC2B6800F38F1D /* License.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = License.swift; sourceTree = "<group>"; };
+		B912A4C729EC30DB00F38F1D /* DownloadRecordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadRecordView.swift; sourceTree = "<group>"; };
+		B912A4C929EC60D600F38F1D /* EditValuesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditValuesView.swift; sourceTree = "<group>"; };
+		B9171DCC29AC175A00B83DF2 /* ListModView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListModView.swift; sourceTree = "<group>"; };
+		B9171DCE29AC183B00B83DF2 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		B9171DD129AC18C900B83DF2 /* ModrinthData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModrinthData.swift; sourceTree = "<group>"; };
+		B975BF6729F034F400A586EE /* ModrinthSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModrinthSearch.swift; sourceTree = "<group>"; };
+		B975BF6929F03FC100A586EE /* ModView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModView.swift; sourceTree = "<group>"; };
+		B994C16B29ED53CE00C7E33F /* RecordModProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordModProperties.swift; sourceTree = "<group>"; };
+		B99C1A9829893C070066B440 /* Modrinth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Modrinth.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B99C1A9B29893C070066B440 /* ModrinthApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModrinthApp.swift; sourceTree = "<group>"; };
+		B99C1A9D29893C070066B440 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		B99C1A9F29893C0A0066B440 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B99C1AA229893C0A0066B440 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		B99C1AAA29894F600066B440 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
+		B99C1AB0298958000066B440 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		B99C1AB5298958970066B440 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		B99C1AB72989AA350066B440 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AboutView.swift; path = Modrinth/AboutView.swift; sourceTree = SOURCE_ROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B99C1A9529893C070066B440 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B975BF6D29F0442600A586EE /* MarkdownUI in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B9171DD029AC18BA00B83DF2 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				B912A4C229EC2B6800F38F1D /* Gallery.swift */,
+				B912A4C329EC2B6800F38F1D /* License.swift */,
+				B912A4C129EC2B6800F38F1D /* ModrinthMod.swift */,
+				B9171DD129AC18C900B83DF2 /* ModrinthData.swift */,
+				B975BF6729F034F400A586EE /* ModrinthSearch.swift */,
+				B912A4BF29EC2A9000F38F1D /* RecordsData.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		B99C1A8F29893C070066B440 = {
+			isa = PBXGroup;
+			children = (
+				B99C1A9A29893C070066B440 /* Modrinth */,
+				B99C1A9929893C070066B440 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		B99C1A9929893C070066B440 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B99C1A9829893C070066B440 /* Modrinth.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B99C1A9A29893C070066B440 /* Modrinth */ = {
+			isa = PBXGroup;
+			children = (
+				B9171DD029AC18BA00B83DF2 /* Data */,
+				B99C1AA929894F410066B440 /* Views */,
+				B99C1AAE298957E90066B440 /* Strings */,
+				B99C1AA129893C0A0066B440 /* Preview Content */,
+				B99C1A9D29893C070066B440 /* ContentView.swift */,
+				B99C1A9B29893C070066B440 /* ModrinthApp.swift */,
+				B99C1A9F29893C0A0066B440 /* Assets.xcassets */,
+			);
+			path = Modrinth;
+			sourceTree = "<group>";
+		};
+		B99C1AA129893C0A0066B440 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				B99C1AA229893C0A0066B440 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		B99C1AA929894F410066B440 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B99C1AB72989AA350066B440 /* AboutView.swift */,
+				B99C1AAA29894F600066B440 /* Home.swift */,
+				B9171DCC29AC175A00B83DF2 /* ListModView.swift */,
+				B9171DCE29AC183B00B83DF2 /* SearchView.swift */,
+				B912A4BD29EC2A5E00F38F1D /* DownloadRecordsView.swift */,
+				B912A4C729EC30DB00F38F1D /* DownloadRecordView.swift */,
+				B912A4C929EC60D600F38F1D /* EditValuesView.swift */,
+				B994C16B29ED53CE00C7E33F /* RecordModProperties.swift */,
+				B975BF6929F03FC100A586EE /* ModView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		B99C1AAE298957E90066B440 /* Strings */ = {
+			isa = PBXGroup;
+			children = (
+				B99C1AB1298958000066B440 /* Localizable.strings */,
+				B99C1AB6298958970066B440 /* Localizable.strings */,
+			);
+			path = Strings;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B99C1A9729893C070066B440 /* Modrinth */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B99C1AA629893C0A0066B440 /* Build configuration list for PBXNativeTarget "Modrinth" */;
+			buildPhases = (
+				B99C1A9429893C070066B440 /* Sources */,
+				B99C1A9529893C070066B440 /* Frameworks */,
+				B99C1A9629893C070066B440 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Modrinth;
+			packageProductDependencies = (
+				B975BF6C29F0442600A586EE /* MarkdownUI */,
+			);
+			productName = Modrinth;
+			productReference = B99C1A9829893C070066B440 /* Modrinth.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B99C1A9029893C070066B440 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1420;
+				LastUpgradeCheck = 1420;
+				TargetAttributes = {
+					B99C1A9729893C070066B440 = {
+						CreatedOnToolsVersion = 14.2;
+					};
+				};
+			};
+			buildConfigurationList = B99C1A9329893C070066B440 /* Build configuration list for PBXProject "Modrinth" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				fr,
+				Base,
+			);
+			mainGroup = B99C1A8F29893C070066B440;
+			packageReferences = (
+				B975BF6B29F0442600A586EE /* XCRemoteSwiftPackageReference "swift-markdown-ui" */,
+			);
+			productRefGroup = B99C1A9929893C070066B440 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B99C1A9729893C070066B440 /* Modrinth */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B99C1A9629893C070066B440 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B99C1AA329893C0A0066B440 /* Preview Assets.xcassets in Resources */,
+				B99C1AB4298958970066B440 /* Localizable.strings in Resources */,
+				B99C1AAF298958000066B440 /* Localizable.strings in Resources */,
+				B99C1AA029893C0A0066B440 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B99C1A9429893C070066B440 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B9171DCD29AC175A00B83DF2 /* ListModView.swift in Sources */,
+				B912A4BE29EC2A5E00F38F1D /* DownloadRecordsView.swift in Sources */,
+				B9171DCF29AC183B00B83DF2 /* SearchView.swift in Sources */,
+				B99C1AB82989AA350066B440 /* AboutView.swift in Sources */,
+				B912A4C829EC30DB00F38F1D /* DownloadRecordView.swift in Sources */,
+				B9171DD229AC18C900B83DF2 /* ModrinthData.swift in Sources */,
+				B912A4C529EC2B6800F38F1D /* Gallery.swift in Sources */,
+				B99C1A9E29893C070066B440 /* ContentView.swift in Sources */,
+				B912A4C029EC2A9000F38F1D /* RecordsData.swift in Sources */,
+				B99C1AAB29894F600066B440 /* Home.swift in Sources */,
+				B975BF6829F034F400A586EE /* ModrinthSearch.swift in Sources */,
+				B975BF6A29F03FC100A586EE /* ModView.swift in Sources */,
+				B912A4CA29EC60D600F38F1D /* EditValuesView.swift in Sources */,
+				B99C1A9C29893C070066B440 /* ModrinthApp.swift in Sources */,
+				B912A4C429EC2B6800F38F1D /* ModrinthMod.swift in Sources */,
+				B994C16C29ED53CE00C7E33F /* RecordModProperties.swift in Sources */,
+				B912A4C629EC2B6800F38F1D /* License.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		B99C1AB1298958000066B440 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B99C1AB0298958000066B440 /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		B99C1AB6298958970066B440 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B99C1AB5298958970066B440 /* fr */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		B99C1AA429893C0A0066B440 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		B99C1AA529893C0A0066B440 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B99C1AA729893C0A0066B440 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Modrinth/Preview Content\"";
+				DEVELOPMENT_TEAM = HB5P3BML86;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Modrinth;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lumaa.Modrinth;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B99C1AA829893C0A0066B440 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Modrinth/Preview Content\"";
+				DEVELOPMENT_TEAM = HB5P3BML86;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Modrinth;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lumaa.Modrinth;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B99C1A9329893C070066B440 /* Build configuration list for PBXProject "Modrinth" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B99C1AA429893C0A0066B440 /* Debug */,
+				B99C1AA529893C0A0066B440 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B99C1AA629893C0A0066B440 /* Build configuration list for PBXNativeTarget "Modrinth" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B99C1AA729893C0A0066B440 /* Debug */,
+				B99C1AA829893C0A0066B440 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		B975BF6B29F0442600A586EE /* XCRemoteSwiftPackageReference "swift-markdown-ui" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/gonzalezreal/swift-markdown-ui";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B975BF6C29F0442600A586EE /* MarkdownUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B975BF6B29F0442600A586EE /* XCRemoteSwiftPackageReference "swift-markdown-ui" */;
+			productName = MarkdownUI;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = B99C1A9029893C070066B440 /* Project object */;
+}

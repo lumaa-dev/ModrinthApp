@@ -1,0 +1,54 @@
+/* The app name */
+"Modrinth" = "Modrinth";
+
+/* The app motto */
+"The place for Minecraft mods" = "Le lieu pour tous les mods Minecraft";
+
+/* Button to open the mod gallery */
+"Discover mods" = "Découvrir des mods";
+
+/* Button to show more about the technical side of the app */
+"About" = "À propos";
+
+"Share" = "Partager";
+
+"Add to the records" = "Ajouter au données";
+
+"Download Records" = "Télécharger des données";
+
+"Tap on the" = "Appuyez sur";
+
+"on the top right to add a mod" = "pour ajouter un mod";
+
+"Downloads" = "Téléchargements";
+
+"Followers" = "Suivis";
+
+"Add" = "Ajouter";
+
+"Edit Values" = "Modifier les valeurs";
+
+"Update Statistics" = "Mettre à jour les stats";
+
+"Show symbols" = "Afficher des symboles";
+
+"Preferences" = "Préférences";
+
+"Lists" = "Listes";
+
+"Download Tolerence" = "Tolérence de Téléchargement";
+
+"None" = "Aucun";
+
+"Low" = "Faible";
+
+"Medium" = "Moyen";
+
+"High" = "Élevé";
+
+"Massive" = "Massif";
+
+"Extreme" = "Extrême";
+
+"This app has been conceived for iPhones using iOS 16 or more\nNot related to Modrinth or Rinth in any way.\n\nThis app was made in SwiftUI by Lumaa. Find out more on https://lumaa.brebond.com/" = "Cette appli a été conçue pour les iPhones utilisant iOS 16 ou plus\nNon affilié à Modrinth.\n\nCette appli a été faite en SwiftUI par Lumaa. Découvrez plus sur https://lumaa.fr/";
+
