@@ -11,6 +11,7 @@ struct ModrinthMod: Codable, Identifiable {
   var description          : String?    = nil
   var body                 : String?    = nil
   var bodyUrl              : String?    = nil
+  var donationUrls         : [DonationUrls]?    = []
   var published            : String?    = nil
   var updated              : String?    = nil
   var approved             : String?    = nil
@@ -33,7 +34,6 @@ struct ModrinthMod: Codable, Identifiable {
   var sourceUrl            : String?    = nil
   var wikiUrl              : String?    = nil
   var discordUrl           : String?    = nil
-  var donationUrls         : [String]?  = []
   var gallery              : [Gallery]? = []
   var flameAnvilProject    : String?    = nil
   var flameAnvilUser       : String?    = nil
@@ -90,6 +90,7 @@ struct ModrinthMod: Codable, Identifiable {
     description          = try values.decodeIfPresent(String.self    , forKey: .description          )
     body                 = try values.decodeIfPresent(String.self    , forKey: .body                 )
     bodyUrl              = try values.decodeIfPresent(String.self    , forKey: .bodyUrl              )
+    donationUrls          = try values.decodeIfPresent([DonationUrls].self    , forKey: .donationUrls          )
     published            = try values.decodeIfPresent(String.self    , forKey: .published            )
     updated              = try values.decodeIfPresent(String.self    , forKey: .updated              )
     approved             = try values.decodeIfPresent(String.self    , forKey: .approved             )
@@ -112,7 +113,6 @@ struct ModrinthMod: Codable, Identifiable {
     sourceUrl            = try values.decodeIfPresent(String.self    , forKey: .sourceUrl            )
     wikiUrl              = try values.decodeIfPresent(String.self    , forKey: .wikiUrl              )
     discordUrl           = try values.decodeIfPresent(String.self    , forKey: .discordUrl           )
-    donationUrls         = try values.decodeIfPresent([String].self  , forKey: .donationUrls         )
     gallery              = try values.decodeIfPresent([Gallery].self , forKey: .gallery              )
     flameAnvilProject    = try values.decodeIfPresent(String.self    , forKey: .flameAnvilProject    )
     flameAnvilUser       = try values.decodeIfPresent(String.self    , forKey: .flameAnvilUser       )
@@ -130,6 +130,7 @@ struct ModrinthMod: Codable, Identifiable {
         try container.encodeIfPresent(self.description, forKey: .description)
         try container.encodeIfPresent(self.body, forKey: .body)
         try container.encodeIfPresent(self.bodyUrl, forKey: .bodyUrl)
+        try container.encodeIfPresent(self.donationUrls, forKey: .donationUrls)
         try container.encodeIfPresent(self.published, forKey: .published)
         try container.encodeIfPresent(self.updated, forKey: .updated)
         try container.encodeIfPresent(self.approved, forKey: .approved)
