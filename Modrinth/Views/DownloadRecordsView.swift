@@ -71,7 +71,10 @@ struct DownloadRecordsView: View {
                     }
                 }
                 .sheet(isPresented: $addingMod) {
-                    ZStack {
+                    VStack {
+                        Text("Insert mod ID or slug")
+                            .font(.title)
+                        
                         TextField("backrooms", text: $modId)
                             .autocorrectionDisabled(true)
                             .disableAutocorrection(true)
