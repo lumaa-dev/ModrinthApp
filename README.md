@@ -10,6 +10,8 @@ There are also more hidden features or features that are not written here.
 **This app is not affiliated with Modrinth in any way.**
 
 # Showcase images
+All the screenshots were taken at [this specific commit](https://github.com/lumaa-dev/ModrinthApp/tree/f83b5a5ec569cf6b78a17fb12b3f42b44bf5cdbe). Images might not me accurate.
+
 ## Graphics
 Mod displayed: [The Backrooms Mod](https://modrinth.com/mod/backrooms)
 ![Backrooms Mod Graphics](./README_img/graph.jpg)
