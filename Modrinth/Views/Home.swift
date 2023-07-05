@@ -66,6 +66,9 @@ struct Home: View {
                             }
                         }
                     }
+                    
+                    //TODO: Like Modrinth home, display projects
+                    //TODO: Display features only on Modrinth App
                 }
             }
             .frame(width: size.width, height: size.height)

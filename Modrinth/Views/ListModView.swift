@@ -27,7 +27,7 @@ struct ListModView: View {
                 }
             }
         }
-        .padding(10)
+        .padding(3)
         .contextMenu {
             ShareLink(item: URL(string: "https://modrinth.com/mod/\(mod.projectId ?? "backrooms")")!) {
                 Label("Share", systemImage: "square.and.arrow.up")
