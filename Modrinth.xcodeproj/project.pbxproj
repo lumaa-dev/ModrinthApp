@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B90DA15C2A557B1100533BC7 /* RecordModView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B90DA15B2A557B1100533BC7 /* RecordModView.swift */; };
 		B912A4BE29EC2A5E00F38F1D /* DownloadRecordsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B912A4BD29EC2A5E00F38F1D /* DownloadRecordsView.swift */; };
 		B912A4C029EC2A9000F38F1D /* RecordsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B912A4BF29EC2A9000F38F1D /* RecordsData.swift */; };
 		B912A4C429EC2B6800F38F1D /* ModrinthMod.swift in Sources */ = {isa = PBXBuildFile; fileRef = B912A4C129EC2B6800F38F1D /* ModrinthMod.swift */; };
@@ -32,6 +33,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B90DA15B2A557B1100533BC7 /* RecordModView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordModView.swift; sourceTree = "<group>"; };
 		B912A4BD29EC2A5E00F38F1D /* DownloadRecordsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadRecordsView.swift; sourceTree = "<group>"; };
 		B912A4BF29EC2A9000F38F1D /* RecordsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordsData.swift; sourceTree = "<group>"; };
 		B912A4C129EC2B6800F38F1D /* ModrinthMod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModrinthMod.swift; sourceTree = "<group>"; };
@@ -131,6 +133,7 @@
 				B912A4C929EC60D600F38F1D /* EditValuesView.swift */,
 				B994C16B29ED53CE00C7E33F /* RecordModProperties.swift */,
 				B975BF6929F03FC100A586EE /* ModView.swift */,
+				B90DA15B2A557B1100533BC7 /* RecordModView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -235,6 +238,7 @@
 				B99C1AAB29894F600066B440 /* Home.swift in Sources */,
 				B975BF6829F034F400A586EE /* ModrinthSearch.swift in Sources */,
 				B975BF6A29F03FC100A586EE /* ModView.swift in Sources */,
+				B90DA15C2A557B1100533BC7 /* RecordModView.swift in Sources */,
 				B912A4CA29EC60D600F38F1D /* EditValuesView.swift in Sources */,
 				B99C1A9C29893C070066B440 /* ModrinthApp.swift in Sources */,
 				B912A4C429EC2B6800F38F1D /* ModrinthMod.swift in Sources */,

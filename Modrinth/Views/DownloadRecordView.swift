@@ -12,6 +12,7 @@ struct DownloadRecordView: View {
     @State var addingCount: Bool = false
     @State var editsValues: Bool = false
     @State var showSettings: Bool = false
+    @State var showProject: Bool = false
     @State var date: Date = Date.now
     @State var selectedCount: String = "Downloads"
     @State var number: String = ""
@@ -27,72 +28,11 @@ struct DownloadRecordView: View {
                         .bold()
                         .padding()
                     
+                    //TODO: Display a list of buttons to fully take advantage of the data
+                    
                     Spacer()
                     
-                    Chart {
-                        ForEach(recordedMod.records) { record in
-                            if (record.downloads > -1) {
-                                if (showSymbols) {
-                                    LineMark(x: .value("Date", record.date), y: .value("Downloads", record.downloads))
-                                    .symbol(by: .value("Type", "Downloads"))
-                                        .annotation {
-                                            HStack {
-                                                Text("\(record.downloads)")
-                                                    .padding(5)
-                                                    .background(Color.gray.opacity(0.3))
-                                                    .clipShape(RoundedRectangle(cornerRadius: 20))
-                                                    .offset(y: -5)
-                                            }
-                                        }
-                                } else {
-                                    LineMark(x: .value("Date", record.date), y: .value("Downloads", record.downloads))
-                                    .interpolationMethod(InterpolationMethod.monotone)
-                                    .foregroundStyle(by: .value("Type", "Downloads"))
-                                        .annotation {
-                                            HStack {
-                                                Text("\(record.downloads)")
-                                                    .padding(5)
-                                                    .background(Color.gray.opacity(0.3))
-                                                    .clipShape(RoundedRectangle(cornerRadius: 20))
-                                                    .offset(y: -5)
-                                            }
-                                        }
-                                }
-                            }
-                            
-                            if (record.followers > -1) {
-                                if (showSymbols) {
-                                    LineMark(x: .value("Date", record.date), y: .value("Followers", record.followers))
-                                        .symbol(by: .value("Type", "Followers"))
-                                        .annotation {
-                                            HStack {
-                                                Text("\(record.followers)")
-                                                    .padding(5)
-                                                    .background(Color.gray.opacity(0.3))
-                                                    .clipShape(RoundedRectangle(cornerRadius: 20))
-                                                    .offset(y: -5)
-                                            }
-                                        }
-                                } else {
-                                    LineMark(x: .value("Date", record.date), y: .value("Followers", record.followers))
-                                        .interpolationMethod(InterpolationMethod.monotone)
-                                        .foregroundStyle(by: .value("Type", "Followers"))
-                                        .annotation {
-                                            HStack {
-                                                Text("\(record.followers)")
-                                                    .padding(5)
-                                                    .background(Color.gray.opacity(0.3))
-                                                    .clipShape(RoundedRectangle(cornerRadius: 20))
-                                                    .offset(y: -5)
-                                            }
-                                        }
-                                }
-                                
-                            }
-                        }
-                    }
-                    .frame(width: size.width - 20, height: size.width - 20, alignment: .center)
-                    .padding()
+                    RecordChart(recordedMod: recordedMod, showSymbols: showSymbols, size: size)
                     
                     Spacer()
                     
@@ -140,7 +80,12 @@ struct DownloadRecordView: View {
                     
                     Spacer()
                     
-                    //TODO: Monthly download graph
+                    if (recordedMod.records.count >= 2) {
+                        Text("+\(recordedMod.records[0].downloads - recordedMod.records[1].downloads) downloads!")
+                            .foregroundColor(Color.green)
+                    }
+                    
+                    //TODO: Monthly download graph (iOS 17)
                     // To do specficially for iOS 17 Swift Charts stuff yk what i mean future me
                 }
             }
@@ -198,6 +143,13 @@ struct DownloadRecordView: View {
                         .navigationBarTitleDisplayMode(.inline)
                 }
             }
+            .sheet(isPresented: $showProject) {
+                NavigationStack {
+                    //TODO: Request latest body of mod
+                    RecordModView(mod: recordedMod.mod)
+                }
+                .presentationDragIndicator(.visible)
+            }
             .toolbar {
                 ToolbarItem {
                     Menu {
@@ -213,6 +165,8 @@ struct DownloadRecordView: View {
                             Label("Edit Values", systemImage: "square.and.pencil")
                         }
                         
+                        Divider()
+                        
                         Button {
                             UserDefaults.standard.set(!UserDefaults.standard.bool(forKey: "symbols"), forKey: "symbols")
                             showSymbols = UserDefaults.standard.bool(forKey: "symbols")
@@ -222,6 +176,12 @@ struct DownloadRecordView: View {
                             } else {
                                 Text("Show symbols")
                             }
+                        }
+                        
+                        Button {
+                            showProject.toggle()
+                        } label: {
+                            Label("Show project page", systemImage: "doc.text")
                         }
                     } label: {
                         Image(systemName: "ellipsis.circle")
@@ -237,5 +197,78 @@ struct DownloadRecordView: View {
                 }
             }
         }
+    }
+}
+
+private struct RecordChart: View {
+    let recordedMod: RecordedMod
+    let showSymbols: Bool
+    let size: CGSize
+    
+    var body: some View {
+        Chart {
+            ForEach(recordedMod.records) { record in
+                if (record.downloads > -1) {
+                    if (showSymbols) {
+                        LineMark(x: .value("Date", record.date), y: .value("Downloads", record.downloads))
+                        .symbol(by: .value("Type", "Downloads"))
+                            .annotation {
+                                HStack {
+                                    Text("\(record.downloads)")
+                                        .padding(5)
+                                        .background(Color.gray.opacity(0.3))
+                                        .clipShape(RoundedRectangle(cornerRadius: 20))
+                                        .offset(y: -5)
+                                }
+                            }
+                    } else {
+                        LineMark(x: .value("Date", record.date), y: .value("Downloads", record.downloads))
+                        .interpolationMethod(InterpolationMethod.monotone)
+                        .foregroundStyle(by: .value("Type", "Downloads"))
+                            .annotation {
+                                HStack {
+                                    Text("\(record.downloads)")
+                                        .padding(5)
+                                        .background(Color.gray.opacity(0.3))
+                                        .clipShape(RoundedRectangle(cornerRadius: 20))
+                                        .offset(y: -5)
+                                }
+                            }
+                    }
+                }
+                
+                if (record.followers > -1) {
+                    if (showSymbols) {
+                        LineMark(x: .value("Date", record.date), y: .value("Followers", record.followers))
+                            .symbol(by: .value("Type", "Followers"))
+                            .annotation {
+                                HStack {
+                                    Text("\(record.followers)")
+                                        .padding(5)
+                                        .background(Color.gray.opacity(0.3))
+                                        .clipShape(RoundedRectangle(cornerRadius: 20))
+                                        .offset(y: -5)
+                                }
+                            }
+                    } else {
+                        LineMark(x: .value("Date", record.date), y: .value("Followers", record.followers))
+                            .interpolationMethod(InterpolationMethod.monotone)
+                            .foregroundStyle(by: .value("Type", "Followers"))
+                            .annotation {
+                                HStack {
+                                    Text("\(record.followers)")
+                                        .padding(5)
+                                        .background(Color.gray.opacity(0.3))
+                                        .clipShape(RoundedRectangle(cornerRadius: 20))
+                                        .offset(y: -5)
+                                }
+                            }
+                    }
+                    
+                }
+            }
+        }
+        .frame(width: size.width - 20, height: size.width - 20, alignment: .center)
+        .padding()
     }
 }
