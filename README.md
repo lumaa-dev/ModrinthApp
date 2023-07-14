@@ -1,9 +1,11 @@
 # Modrinth App
-This is a very quick unofficial Modrinth app made in SwiftUI, and it uses `UserDefaults` to save "records" which are graphs of downloads and followers as shown [here](#graphics), using Swift Charts.
+This is a very quick unofficial Modrinth app made in SwiftUI, and it uses `UserDefaults` to save "records" which are graphs of downloads and followers as shown [here](#graphics), using [Swift Charts](https://developer.apple.com/documentation/charts), the official chart API made for SwiftUI by Apple mainly updated each year.
 
 There is also the ["Mods"](#mods) page as well as the ["Search mods"](#search). When you click on a mod it displays [this very lazy view](#mod).
 
 There are also more hidden features or features that are not written here.
+
+**iOS development will be continued this fall, with the release of [iOS 17](https://www.apple.com/ios/ios-17-preview/)**.
 
 * * *
 
