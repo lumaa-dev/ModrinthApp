@@ -71,7 +71,9 @@ struct DownloadRecordView: View {
                     } label: {
                         Text("Update Statistics")
                             .bold()
+                        #if os(iOS)
                             .foregroundColor(Color(uiColor: .label))
+                        #endif
                             .padding()
                             .background(Color.accentColor)
                             .clipShape(RoundedRectangle(cornerRadius: 20))
@@ -104,7 +106,9 @@ struct DownloadRecordView: View {
                         .datePickerStyle(.compact)
                     
                     TextField("715", text: $number)
+                    #if os(iOS)
                         .keyboardType(.numberPad)
+                    #endif
                         .padding()
                         .textFieldStyle(.roundedBorder)
                     
@@ -122,7 +126,9 @@ struct DownloadRecordView: View {
                     } label: {
                         Text("Add")
                             .bold()
+                        #if os(iOS)
                             .foregroundColor(Color(uiColor: .label))
+                        #endif
                             .padding()
                             .background(Color.accentColor)
                             .clipShape(RoundedRectangle(cornerRadius: 20))
@@ -140,7 +146,9 @@ struct DownloadRecordView: View {
                 NavigationStack {
                     RecordModProperties(recordedMod: $recordedMod)
                         .navigationTitle(Text("Preferences"))
+                    #if os(iOS)
                         .navigationBarTitleDisplayMode(.inline)
+                    #endif
                 }
             }
             .sheet(isPresented: $showProject) {
