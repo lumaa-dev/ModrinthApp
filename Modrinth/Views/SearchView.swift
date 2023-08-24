@@ -1,6 +1,11 @@
 //Made by Lumaa
 
 import SwiftUI
+#if os (iOS)
+import UIKit
+#elseif os(macOS)
+import AppKit
+#endif
 
 struct SearchView: View {
     @State var mods: [Hits] = []
@@ -23,15 +28,49 @@ struct SearchView: View {
                     })
                 }
         } else if (mods.count > 0) {
-            List(filteredMods, id: \.projectId) { mod in
-                NavigationLink {
-                    ModView(hitMod: mod)
-                } label: {
-                    ListModView(mod: mod)
+            GeometryReader { proxy in
+                let size = proxy.size
+                
+                ScrollView {
+                    VStack (alignment: .center) {
+                        ForEach(filteredMods, id: \.projectId) { mod in
+                            let openApp = UserDefaults.standard.bool(forKey: "inApp")
+                            if openApp {
+                                NavigationLink {
+                                    ModView(hitMod: mod)
+                                } label: {
+                                    ListModView(mod: mod, size: size)
+                                }
+                                .buttonStyle(.plain)
+                            } else {
+                                Link(destination: URL(string: "https://modrinth.com/mod/\(mod.projectId ?? "backrooms")")!) {
+                                    ListModView(mod: mod, size: size)
+                                        #if os(iOS)
+                                        .tint(Color(UIColor.label))
+                                        #elseif os(macOS)
+                                        .tint(Color(nsColor: NSColor.labelColor))
+                                        #endif
+                                }
+                            }
+                        }
+                        
+                        Text("\(filteredMods.count) mods")
+                            .padding()
+                            .foregroundColor(Color.gray)
+                            .font(.caption)
+                    }
                 }
+                #if os(macOS)
+                .frame(width: size.width / 1.75, alignment: .center)
+                .offset(x: 200)
+                #endif
+                
+                #if os(iOS)
+                .frame(width: size.width)
+                #endif
+                .searchable(text: $searchText, placement: .toolbar, prompt: "Search for mods...")
             }
             .navigationTitle(Text("Mods"))
-            .searchable(text: $searchText, placement: .toolbar, prompt: "Search for mods...")
             .scrollDismissesKeyboard(.interactively)
             .onChange(of: searchText) { newString in
                 if (newString.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty) {
@@ -53,7 +92,7 @@ struct SearchView: View {
             }
         } else {
             ScrollView {
-                Text("Oh! Seems like your search got 0 results...")
+                Text("Oh!\nSeems like your search got 0 results...")
                     .foregroundColor(.gray.opacity(0.5))
                     .padding(.top, 50)
             }
