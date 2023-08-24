@@ -28,6 +28,20 @@ struct ModView: View {
                     .background(Color.gray.opacity(0.3))
                     .clipShape(RoundedRectangle(cornerRadius: 20))
                 
+                Divider()
+                
+                VStack (alignment: .leading) {
+                    Label("\(hitMod.downloads ?? 0) downloads", systemImage: "square.and.arrow.down")
+                    
+                    Label("\(hitMod.follows ?? 0) followers", systemImage: "heart")
+                    
+                    Text(envrionmentString(client: hitMod.clientSide ?? "unknown", server: hitMod.serverSide ?? "unknown"))
+                }
+                .frame(width: size.width - 50)
+                .padding(10)
+                .background(Color.gray.opacity(0.3))
+                .clipShape(RoundedRectangle(cornerRadius: 20))
+                
                 if (newCall) {
                     Markdown(trimHtml(md).isEmpty ? "*No body was found*" : trimHtml(md))
                         .padding()
@@ -46,6 +60,21 @@ struct ModView: View {
             .frame(minWidth: size.width, minHeight: size.height)
         }
     }
+}
+
+func envrionmentString(client: String, server: String) -> String {
+    if (client == "required" && server == "required") {
+        return "Client and server"
+    } else if (client == "optional" && server == "optional") {
+        return "Client or server"
+    } else if (client == "unsupported" && server == "unsupported") {
+        return "Unsupported"
+    } else if ((client == "required" || client == "optional") && (server == "unsupported") || (server == "optional")) {
+        return "Client"
+    } else if ((server == "required" || server == "optional") && (client == "unsupported") || (client == "optional")) {
+        return "Server"
+    }
+    return "Unidentified"
 }
 
 struct ModView_Previews: PreviewProvider {
