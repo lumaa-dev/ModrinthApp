@@ -19,6 +19,7 @@
 		B9171DCF29AC183B00B83DF2 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9171DCE29AC183B00B83DF2 /* SearchView.swift */; };
 		B9171DD229AC18C900B83DF2 /* ModrinthData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9171DD129AC18C900B83DF2 /* ModrinthData.swift */; };
 		B91A65BF2A54B0A8004707B5 /* DonationUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = B91A65BE2A54B0A8004707B5 /* DonationUrl.swift */; };
+		B91CFAFA2A5EA38400AEF24F /* AppPreferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = B91CFAF92A5EA38400AEF24F /* AppPreferences.swift */; };
 		B975BF6829F034F400A586EE /* ModrinthSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = B975BF6729F034F400A586EE /* ModrinthSearch.swift */; };
 		B975BF6A29F03FC100A586EE /* ModView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B975BF6929F03FC100A586EE /* ModView.swift */; };
 		B975BF6D29F0442600A586EE /* MarkdownUI in Frameworks */ = {isa = PBXBuildFile; productRef = B975BF6C29F0442600A586EE /* MarkdownUI */; };
@@ -45,6 +46,8 @@
 		B9171DCE29AC183B00B83DF2 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		B9171DD129AC18C900B83DF2 /* ModrinthData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModrinthData.swift; sourceTree = "<group>"; };
 		B91A65BE2A54B0A8004707B5 /* DonationUrl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationUrl.swift; sourceTree = "<group>"; };
+		B91CFAF92A5EA38400AEF24F /* AppPreferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppPreferences.swift; sourceTree = "<group>"; };
+		B91CFAFB2A5EA38C00AEF24F /* Preferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
 		B975BF6729F034F400A586EE /* ModrinthSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModrinthSearch.swift; sourceTree = "<group>"; };
 		B975BF6929F03FC100A586EE /* ModView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModView.swift; sourceTree = "<group>"; };
 		B994C16B29ED53CE00C7E33F /* RecordModProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordModProperties.swift; sourceTree = "<group>"; };
@@ -80,6 +83,7 @@
 				B975BF6729F034F400A586EE /* ModrinthSearch.swift */,
 				B912A4BF29EC2A9000F38F1D /* RecordsData.swift */,
 				B91A65BE2A54B0A8004707B5 /* DonationUrl.swift */,
+				B91CFAFB2A5EA38C00AEF24F /* Preferences.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -134,6 +138,7 @@
 				B994C16B29ED53CE00C7E33F /* RecordModProperties.swift */,
 				B975BF6929F03FC100A586EE /* ModView.swift */,
 				B90DA15B2A557B1100533BC7 /* RecordModView.swift */,
+				B91CFAF92A5EA38400AEF24F /* AppPreferences.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -228,6 +233,7 @@
 			files = (
 				B9171DCD29AC175A00B83DF2 /* ListModView.swift in Sources */,
 				B912A4BE29EC2A5E00F38F1D /* DownloadRecordsView.swift in Sources */,
+				B91CFAFC2A5EA38C00AEF24F /* Preferences.swift in Sources */,
 				B9171DCF29AC183B00B83DF2 /* SearchView.swift in Sources */,
 				B912A4C829EC30DB00F38F1D /* DownloadRecordView.swift in Sources */,
 				B9171DD229AC18C900B83DF2 /* ModrinthData.swift in Sources */,
@@ -243,6 +249,7 @@
 				B99C1A9C29893C070066B440 /* ModrinthApp.swift in Sources */,
 				B912A4C429EC2B6800F38F1D /* ModrinthMod.swift in Sources */,
 				B994C16C29ED53CE00C7E33F /* RecordModProperties.swift in Sources */,
+				B91CFAFA2A5EA38400AEF24F /* AppPreferences.swift in Sources */,
 				B912A4C629EC2B6800F38F1D /* License.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -319,7 +326,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.3;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -374,7 +381,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -409,6 +416,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.lumaa.Modrinth;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -439,6 +449,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.lumaa.Modrinth;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
