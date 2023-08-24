@@ -24,8 +24,8 @@ func requestMod(id: String, completionHandler: @escaping (_ mod: ModrinthMod) ->
     task.resume()
 }
 
-func loadSearch(query: String, page: Int, completionHandler: @escaping (_ output: ModrinthSearch) -> Void) {
-    var request = URLRequest(url: URL(string: "https://api.modrinth.com/v2/search?query=\(query.trimmingCharacters(in: .whitespacesAndNewlines))&limit=100&offset=\((page - 1) * 100)")!, timeoutInterval: Double.infinity)
+func loadSearch(query: String, page: Int, limit: Int? = 25, completionHandler: @escaping (_ output: ModrinthSearch) -> Void) {
+    var request = URLRequest(url: URL(string: "https://api.modrinth.com/v2/search?query=\(query.trimmingCharacters(in: .whitespacesAndNewlines))&limit=\(limit ?? 100)&offset=\((page - 1) * 100)")!, timeoutInterval: Double.infinity)
     request.httpMethod = "GET"
 
     let task = URLSession.shared.dataTask(with: request) { data, response, error in
@@ -84,4 +84,25 @@ func replace(string: String, with: NSRegularExpression, to: String) {
     with.replaceMatches(in: mString, options: [], range: NSMakeRange(0, mString.length), withTemplate: "")
     s = String(mString)
     s = s.replacingOccurrences(of: "  ", with: " ")
+}
+
+extension Int {
+    var roundedWithAbbreviations: String {
+        let number = Double(self)
+        let thousand = number / 1000
+        let million = number / 1000000
+        if million >= 1.0 {
+            return "\(round(million*10)/10)M"
+        }
+        else if thousand >= 1.0 {
+            return "\(round(thousand*10)/10)K"
+        }
+        else {
+            return "\(self)"
+        }
+    }
+    
+    var toString: String {
+        return "\(self)"
+    }
 }
