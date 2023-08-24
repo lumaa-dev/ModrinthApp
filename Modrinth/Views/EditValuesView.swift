@@ -31,6 +31,10 @@ struct EditValuesView: View {
                 saveRecords(records: recordedMods)
             }
         }
+        #if os(iOS)
         .navigationBarTitle(Text("Edit Values"))
+        #else
+        .navigationTitle(Text("Edit Values"))
+        #endif
     }
 }
