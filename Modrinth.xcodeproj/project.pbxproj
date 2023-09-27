@@ -47,7 +47,6 @@
 		B9171DD129AC18C900B83DF2 /* ModrinthData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModrinthData.swift; sourceTree = "<group>"; };
 		B91A65BE2A54B0A8004707B5 /* DonationUrl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationUrl.swift; sourceTree = "<group>"; };
 		B91CFAF92A5EA38400AEF24F /* AppPreferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppPreferences.swift; sourceTree = "<group>"; };
-		B91CFAFB2A5EA38C00AEF24F /* Preferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
 		B975BF6729F034F400A586EE /* ModrinthSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModrinthSearch.swift; sourceTree = "<group>"; };
 		B975BF6929F03FC100A586EE /* ModView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModView.swift; sourceTree = "<group>"; };
 		B994C16B29ED53CE00C7E33F /* RecordModProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordModProperties.swift; sourceTree = "<group>"; };
@@ -83,7 +82,6 @@
 				B975BF6729F034F400A586EE /* ModrinthSearch.swift */,
 				B912A4BF29EC2A9000F38F1D /* RecordsData.swift */,
 				B91A65BE2A54B0A8004707B5 /* DonationUrl.swift */,
-				B91CFAFB2A5EA38C00AEF24F /* Preferences.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -233,7 +231,6 @@
 			files = (
 				B9171DCD29AC175A00B83DF2 /* ListModView.swift in Sources */,
 				B912A4BE29EC2A5E00F38F1D /* DownloadRecordsView.swift in Sources */,
-				B91CFAFC2A5EA38C00AEF24F /* Preferences.swift in Sources */,
 				B9171DCF29AC183B00B83DF2 /* SearchView.swift in Sources */,
 				B912A4C829EC30DB00F38F1D /* DownloadRecordView.swift in Sources */,
 				B9171DD229AC18C900B83DF2 /* ModrinthData.swift in Sources */,
@@ -326,7 +323,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -381,7 +378,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -408,7 +405,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -421,7 +418,7 @@
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -441,7 +438,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -454,7 +451,7 @@
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
