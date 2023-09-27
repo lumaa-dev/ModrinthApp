@@ -9,6 +9,7 @@ struct ModrinthApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+            #if os(macOS)
                 .toolbar() {
                     ToolbarItem {
                         Button {
@@ -24,6 +25,7 @@ struct ModrinthApp: App {
                     }
                     .navigationTitle(Text("Preferences"))
                 }
+            #endif
         }
     }
 }

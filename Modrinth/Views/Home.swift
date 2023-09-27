@@ -3,6 +3,8 @@
 import SwiftUI
 
 struct Home: View {
+    @State var displayPreferences: Bool = false
+    
     var body: some View {
         GeometryReader { geo in
             let size = geo.size
@@ -80,6 +82,20 @@ struct Home: View {
                     //TODO: Like Modrinth home, display projects
                     //TODO: Display features only on Modrinth App
                 }
+                #if os(iOS)
+                .toolbar {
+                    ToolbarItem(placement: .primaryAction) {
+                        Button {
+                            displayPreferences.toggle()
+                        } label: {
+                            Label("Settings", systemImage: "gear")
+                        }
+                    }
+                }
+                .fullScreenCover(isPresented: $displayPreferences) {
+                    AppPreferences()
+                }
+                #endif
             }
             .frame(width: size.width, height: size.height)
         }
