@@ -5,8 +5,6 @@ There is also the ["Mods"](#mods) page as well as the ["Search mods"](#search). 
 
 There are also more hidden features or features that are not written here.
 
-**iOS development will be continued this fall, with the release of [iOS 17](https://www.apple.com/ios/ios-17-preview/)**.
-
 * * *
 
 **This app is not affiliated with Modrinth in any way.**
