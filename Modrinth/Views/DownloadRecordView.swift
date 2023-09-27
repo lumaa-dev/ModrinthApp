@@ -33,6 +33,7 @@ struct DownloadRecordView: View {
                     Spacer()
                     
                     RecordChart(recordedMod: recordedMod, showSymbols: showSymbols, size: size)
+                        .offset(y: -20)
                     
                     Spacer()
                     
@@ -89,6 +90,7 @@ struct DownloadRecordView: View {
                     
                     //TODO: Monthly download graph (iOS 17)
                     // To do specficially for iOS 17 Swift Charts stuff yk what i mean future me
+                    // R: I don't
                 }
             }
             .sheet(isPresented: $addingCount) {
@@ -213,6 +215,20 @@ private struct RecordChart: View {
     let showSymbols: Bool
     let size: CGSize
     
+    @State private var rawSelectedDate: Date?
+    var recordDate: Record? {
+        if (self.rawSelectedDate != nil) {
+            let date = Calendar.current.findClosestDate(targetDate: self.rawSelectedDate!, dateArray: onlyDates(recordedMod.records))
+            if (date != nil) {
+                let filteredRecords = recordedMod.records.filter{ $0.date == date }
+                if (filteredRecords.count > 0) {
+                    return filteredRecords[0]
+                }
+            }
+        }
+        return nil
+    }
+    
     var body: some View {
         Chart {
             ForEach(recordedMod.records) { record in
@@ -275,8 +291,66 @@ private struct RecordChart: View {
                     
                 }
             }
+            if let rawSelectedDate {
+                RuleMark(
+                    x: .value("Selected", recordDate?.date ?? Date.now, unit: .day)
+                )
+                .foregroundStyle(Color.gray.opacity(0.3))
+                .offset(yStart: -10)
+                .zIndex(-1)
+                .annotation(
+                      position: .top, spacing: 0,
+                      overflowResolution: .init(
+                        x: .fit(to: .chart),
+                        y: .disabled
+                      )
+                ) {
+                    VStack(alignment: .leading) {
+                        HStack {
+                            VStack(alignment: .leading) {
+                                Text("Downloads")
+                                    .font(.caption)
+                                    .foregroundStyle(.gray.opacity(0.3))
+                                    .textCase(.uppercase)
+                                
+                                Text(recordDate?.downloads.roundedWithAbbreviations ?? "?")
+                                    .font(.system(.title2, design: .rounded, weight: .bold))
+                            }
+                            VStack(alignment: .leading) {
+                                Text("Followers")
+                                    .font(.caption)
+                                    .foregroundStyle(.gray.opacity(0.3))
+                                    .textCase(.uppercase)
+                                
+                                Text(recordDate?.followers.roundedWithAbbreviations ?? "?")
+                                    .font(.system(.title2, design: .rounded, weight: .bold))
+                            }
+                        }
+                        Text(recordDate?.date.formatted(date: Date.FormatStyle.DateStyle.numeric, time: Date.FormatStyle.TimeStyle.shortened) ?? "?")
+                            .textCase(.lowercase)
+                            .foregroundStyle(.gray.opacity(0.4))
+                    }
+                    .padding(10)
+                    .background(Color.gray.opacity(0.2))
+                    .clipShape(RoundedRectangle(cornerRadius: 5))
+                }
+              }
+        }
+        .chartLegend(.visible)
+        .chartXSelection(value: $rawSelectedDate)
+        .chartGesture { proxy in
+          DragGesture(minimumDistance: 0)
+                .onChanged {
+                    //TODO: Prevent users to go too far
+                    proxy.selectXValue(at: $0.location.x)
+                }
+            .onEnded { _ in rawSelectedDate = nil }
         }
         .frame(width: size.width - 20, height: size.width - 20, alignment: .center)
-        .padding()
+        .padding(EdgeInsets(top: 70 + 20, leading: 10, bottom: 10, trailing: 10))
     }
+}
+
+func onlyDates(_ record: [Record]) -> [Date] {
+    return record.map({ $0.date })
 }

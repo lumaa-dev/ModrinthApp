@@ -106,3 +106,15 @@ extension Int {
         return "\(self)"
     }
 }
+
+extension Calendar {
+    func findClosestDate(targetDate: Date, dateArray: [Date]) -> Date? {
+        guard let closestDate = dateArray.min(by: {
+            abs($0.timeIntervalSince(targetDate)) < abs($1.timeIntervalSince(targetDate))
+        }) else {
+            return nil
+        }
+        
+        return closestDate
+    }
+}
