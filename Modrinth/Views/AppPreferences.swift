@@ -10,45 +10,49 @@ struct AppPreferences: View {
     @State var openIn: BodyType = .inApp
     
     var body: some View {
-        Form {
-            Section {
-                TextField("Modrinth Token", text: $token)
-                    .textFieldStyle(.squareBorder)
-            }
-            
-            Section {
-                Picker("Round counters", selection: $round) {
-                    ForEach(RoundCounts.allCases, id: \.self) { count in
-                        Text("\(count.rawValue)")
+        NavigationStack {
+            Form {
+                Section {
+                    TextField("Modrinth Token", text: $token)
+                    #if os(macOS)
+                        .textFieldStyle(.squareBorder)
+                    #endif
+                }
+                
+                Section {
+                    Picker("Round counters", selection: $round) {
+                        ForEach(RoundCounts.allCases, id: \.self) { count in
+                            Text("\(count.rawValue)")
+                        }
+                    }
+                    Picker("Open project", selection: $openIn) {
+                        ForEach(BodyType.allCases, id: \.self) { type in
+                            Text("\(textBody(type))")
+                        }
                     }
                 }
-                Picker("Open project", selection: $openIn) {
-                    ForEach(BodyType.allCases, id: \.self) { type in
-                        Text("\(textBody(type))")
+            }
+            .onAppear {
+                token = UserDefaults.standard.string(forKey: "modrinthToken") ?? ""
+                round = UserDefaults.standard.bool(forKey: "round") ? .thousand : .noRounds
+                openIn = UserDefaults.standard.bool(forKey: "inApp") ? .inApp : .openWeb
+            }
+            .formStyle(.grouped)
+            .toolbar {
+                ToolbarItem(placement: .cancellationAction) {
+                    Button("Cancel", role: .cancel) {
+                        dismiss()
                     }
                 }
-            }
-        }
-        .onAppear {
-            token = UserDefaults.standard.string(forKey: "modrinthToken") ?? ""
-            round = UserDefaults.standard.bool(forKey: "round") ? .thousand : .noRounds
-            openIn = UserDefaults.standard.bool(forKey: "inApp") ? .inApp : .openWeb
-        }
-        .formStyle(.grouped)
-        .toolbar {
-            ToolbarItem(placement: .cancellationAction) {
-                Button("Cancel", role: .cancel) {
-                    dismiss()
-                }
-            }
-            
-            ToolbarItem(placement: .primaryAction) {
-                Button("Apply") {
-                    UserDefaults.standard.set(token.trimmingCharacters(in: .whitespacesAndNewlines), forKey: "modrinthToken")
-                    UserDefaults.standard.set(round == .thousand, forKey: "round")
-                    UserDefaults.standard.set(openIn == .inApp, forKey: "inApp")
-                    
-                    dismiss()
+                
+                ToolbarItem(placement: .primaryAction) {
+                    Button("Apply") {
+                        UserDefaults.standard.set(token.trimmingCharacters(in: .whitespacesAndNewlines), forKey: "modrinthToken")
+                        UserDefaults.standard.set(round == .thousand, forKey: "round")
+                        UserDefaults.standard.set(openIn == .inApp, forKey: "inApp")
+                        
+                        dismiss()
+                    }
                 }
             }
         }
