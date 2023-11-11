@@ -70,22 +70,34 @@ struct DownloadRecordView: View {
                             saveRecords(records: recordedMods)
                         })
                     } label: {
-                        Text("Update Statistics")
-                            .bold()
-                        #if os(iOS)
-                            .foregroundColor(Color(uiColor: .label))
-                        #endif
-                            .padding()
-                            .background(Color.accentColor)
-                            .clipShape(RoundedRectangle(cornerRadius: 20))
-                            .disabled(disabledRefresh)
+                        if disabledRefresh {
+                            ProgressView()
+                                .progressViewStyle(CircularProgressViewStyle())
+                        } else {
+                            Text("Update Statistics")
+                                .bold()
+                            #if os(iOS)
+                                .foregroundColor(Color(uiColor: .label))
+                            #endif
+                                .padding()
+                                .background(Color.accentColor)
+                                .clipShape(RoundedRectangle(cornerRadius: 20))
+                                .disabled(disabledRefresh)
+                        }
                     }
                     
                     Spacer()
                     
                     if (recordedMod.records.count >= 2) {
-                        Text("+\(recordedMod.records[0].downloads - recordedMod.records[1].downloads) downloads!")
-                            .foregroundColor(Color.green)
+                        let new = recordedMod.records[0].downloads - recordedMod.records[1].downloads
+                        
+                        if new < 0 {
+                            Text("\(new) downloads lost...")
+                                .foregroundColor(.red)
+                        } else {
+                            Text("+\(new) downloads!")
+                                .foregroundColor(.green)
+                        }
                     }
                     
                     //TODO: Monthly download graph (iOS 17)
@@ -120,7 +132,7 @@ struct DownloadRecordView: View {
                         
                         recordedMod.records.append(Record(id: recordedMod.id, date: date, downloads: selectedCount == typeCounts[0] ? Int(number)! : -1, followers: selectedCount == typeCounts[1] ? Int(number)! : -1))
                         
-                        recordedMod.records.sort(by: { $0.date > $1.date && $0.downloads > $1.downloads })
+                        recordedMod.records.sort(by: { $0.date > $1.date })
                         recordedMods[i!] = recordedMod
                         
                         saveRecords(records: recordedMods)
@@ -214,6 +226,7 @@ private struct RecordChart: View {
     let recordedMod: RecordedMod
     let showSymbols: Bool
     let size: CGSize
+//    @State var scrolledDate: Date = .now
     
     @State private var rawSelectedDate: Date?
     var recordDate: Record? {
@@ -243,6 +256,7 @@ private struct RecordChart: View {
                                         .background(Color.gray.opacity(0.3))
                                         .clipShape(RoundedRectangle(cornerRadius: 20))
                                         .offset(y: -5)
+                                        .opacity(rawSelectedDate != nil ? 0 : 1)
                                 }
                             }
                     } else {
@@ -256,6 +270,7 @@ private struct RecordChart: View {
                                         .background(Color.gray.opacity(0.3))
                                         .clipShape(RoundedRectangle(cornerRadius: 20))
                                         .offset(y: -5)
+                                        .opacity(rawSelectedDate != nil ? 0 : 1)
                                 }
                             }
                     }
@@ -307,23 +322,27 @@ private struct RecordChart: View {
                 ) {
                     VStack(alignment: .leading) {
                         HStack {
-                            VStack(alignment: .leading) {
-                                Text("Downloads")
-                                    .font(.caption)
-                                    .foregroundStyle(.gray.opacity(0.3))
-                                    .textCase(.uppercase)
-                                
-                                Text(recordDate?.downloads.roundedWithAbbreviations ?? "?")
-                                    .font(.system(.title2, design: .rounded, weight: .bold))
+                            if recordDate?.downloads.roundedWithAbbreviations ?? "?" != "-1" {
+                                VStack(alignment: .leading) {
+                                    Text("Downloads")
+                                        .font(.caption)
+                                        .foregroundStyle(.gray.opacity(0.3))
+                                        .textCase(.uppercase)
+                                    
+                                    Text(recordDate?.downloads.roundedWithAbbreviations ?? "?")
+                                        .font(.system(.title2, design: .rounded, weight: .bold))
+                                }
                             }
-                            VStack(alignment: .leading) {
-                                Text("Followers")
-                                    .font(.caption)
-                                    .foregroundStyle(.gray.opacity(0.3))
-                                    .textCase(.uppercase)
-                                
-                                Text(recordDate?.followers.roundedWithAbbreviations ?? "?")
-                                    .font(.system(.title2, design: .rounded, weight: .bold))
+                            if recordDate?.followers.roundedWithAbbreviations ?? "?" != "-1" {
+                                VStack(alignment: .leading) {
+                                    Text("Followers")
+                                        .font(.caption)
+                                        .foregroundStyle(.gray.opacity(0.3))
+                                        .textCase(.uppercase)
+                                    
+                                    Text(recordDate?.followers.roundedWithAbbreviations ?? "?")
+                                        .font(.system(.title2, design: .rounded, weight: .bold))
+                                }
                             }
                         }
                         Text(recordDate?.date.formatted(date: Date.FormatStyle.DateStyle.numeric, time: Date.FormatStyle.TimeStyle.shortened) ?? "?")
@@ -341,13 +360,15 @@ private struct RecordChart: View {
         .chartGesture { proxy in
           DragGesture(minimumDistance: 0)
                 .onChanged {
-                    //TODO: Prevent users to go too far
                     proxy.selectXValue(at: $0.location.x)
                 }
             .onEnded { _ in rawSelectedDate = nil }
         }
         .frame(width: size.width - 20, height: size.width - 20, alignment: .center)
         .padding(EdgeInsets(top: 70 + 20, leading: 10, bottom: 10, trailing: 10))
+//        .onAppear {
+//            scrolledDate = recordedMod.records.first?.date ?? .now
+//        }
     }
 }
 
